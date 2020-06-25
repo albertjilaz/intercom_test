@@ -35,7 +35,7 @@ If you don't provide any option, the default input provided by Intercom for the 
 
 ## Running Tests
 
-* To run the tests:
+To run the tests:
   ```sh
   $ rake spec
   ```
