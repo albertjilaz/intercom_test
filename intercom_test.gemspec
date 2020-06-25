@@ -27,7 +27,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'json', '~> 2.3.0'
   gem.add_development_dependency 'bundler', '~> 2.0'
   gem.add_development_dependency 'byebug', '~> 11.0.1'
-  gem.add_development_dependency 'rake', '~> 11.0'
+  gem.add_development_dependency 'rake', '>= 12.3.3'
   gem.add_development_dependency 'rspec', '~> 3.9.0'
   gem.add_development_dependency 'simplecov', '~> 0.17.1'
 end
