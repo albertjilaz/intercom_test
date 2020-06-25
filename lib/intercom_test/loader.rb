@@ -17,9 +17,8 @@ module IntercomTest
 
     # Return file content as an array of hashes
     def hash_array
-      file_rows = File.readlines(@file)
-      file_rows.map do |row|
-        JSON.parse(row).map { |key, val| { key.to_sym => val } }.inject(:merge)
+      File.readlines(@file).map do |row|
+        JSON.parse(row).inject({}) { |hash, pair| hash.merge(pair[0].to_sym => pair[1]) }
       end
     end
   end

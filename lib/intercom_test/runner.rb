@@ -31,19 +31,21 @@ module IntercomTest
     def error_handler
       yield
     rescue ArgumentError, TypeError => _e
-      puts "\nInvalid parameters\n\n"
-      puts parser
+      show_error_message "\nInvalid parameters\n\n"
     rescue JSON::ParserError => _e
-      puts "\nFile #{@file} has an invalid format\n\n"
-      puts parser
+      show_error_message "\nFile #{@file} has an invalid format\n\n"
     rescue Errno::ENOENT => _e
-      puts "\nCannot read #{@file}\n\n"
-      puts parser
-    rescue OptionParser::InvalidOption => e
-      puts "\n#{e.message.capitalize}\n\n"
-      puts parser
+      show_error_message "\nCannot read #{@file}\n\n"
+    rescue OptionParser::InvalidOption => exc
+      show_error_message "\n#{exc.message.capitalize}\n\n"
     end
     # rubocop:enable Metrics/MethodLength
+
+    # Print the error message plus the command-line help
+    def show_error_message(error_message)
+      puts error_message
+      puts parser
+    end
 
     # Set default values in case they are not provided through the command line.
     def init_default_options
