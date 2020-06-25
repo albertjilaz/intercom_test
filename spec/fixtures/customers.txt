@@ -1,0 +1,2 @@
+{"latitude": "53.343760", "user_id": 1, "name": "Molly Malone", "longitude": "-6.260947"}
+{"latitude": "53.297609", "user_id": 1, "name": "Alberto Jimenez", "longitude": "-6.203992"}
